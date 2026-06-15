@@ -1,0 +1,54 @@
+{
+  "name": "@rapeflower/shared",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "稳定、健壮、版本兼容的前端共享库",
+  "author": "Guangyao Li <lgy87@foxmail.com>",
+  "license": "MIT",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lgy87/shared.git"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json",
+    "./*": "./src/*/index.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage",
+    "typecheck": "tsgo --noEmit",
+    "bumpp": "bumpp",
+    "prebuild": "./scripts/gen-entry.mjs",
+    "prepublishOnly": "pnpm build"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/core": "^0.18.3",
+    "@types/node": "^25.9.2",
+    "@typescript/native-preview": "7.0.0-dev.20260607.1",
+    "@vitest/coverage-v8": "4.1.8",
+    "@vitest/ui": "4.1.8",
+    "bumpp": "^11.1.0",
+    "fast-glob": "^3.3.3",
+    "publint": "^0.3.21",
+    "tsdown": "^0.22.2",
+    "typescript": "^6.0.3",
+    "unrun": "^0.3.1",
+    "vitest": "^4.1.8"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": "./dist/index.js",
+      "./package.json": "./package.json",
+      "./*": "./dist/*/index.js"
+    }
+  }
+}
