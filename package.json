@@ -1,7 +1,7 @@
 {
   "name": "@rapeflower/shared",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "稳定、健壮、版本兼容的前端共享库",
   "author": "Guangyao Li <lgy87@foxmail.com>",
   "license": "MIT",
